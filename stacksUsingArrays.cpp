@@ -10,6 +10,7 @@ using namespace std;
 using namespace std::chrono;
 
 const int MAX_SIZE = 100;
+int arrsize;
 
 class Stack {
 private:
@@ -64,6 +65,10 @@ public:
 int main(){
     auto start = high_resolution_clock::now();
     srand(time(NULL));
+    
+    cout << "Enter the size of the array: ";
+    cin >> arrSize;
+
 
     Stack myStack;
     myStack.push(8);
