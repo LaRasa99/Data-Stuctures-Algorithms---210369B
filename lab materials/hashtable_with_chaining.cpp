@@ -62,12 +62,11 @@ struct HashTable{
         hash = hashfunc(user_name);
         empty = is_slot_empty(hash);
 	//add your code below
-	
-	
-	
-	
-	
-	
+        if(empty){
+            cout << "User not found" ;
+        }else{
+            password[hash].search(user_name.data());
+	}	
     }
 };
 
@@ -110,3 +109,4 @@ int main(){
     }
     return 0;
 }
+
