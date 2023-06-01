@@ -1,5 +1,3 @@
-// Created by DELL on 6/1/2023.
-//
 #include <iostream>
 #include <vector>
 #include <queue>
@@ -82,17 +80,18 @@ void calculateAverageTimes(const vector<vector<int>>& graph) {
     }
 
     // Find the smallest average time
-    int smallestAverage = INF;
+    float smallestAverage = INT_MAX;
     vector<int> smallestCities;
 
     for (int i = 0; i < n; ++i) {
-        int averageTime = totalTimes[i] / n;
+        //float averageTime = totalTimes[i] / n;
+        //cout << totalTimes[i] << endl;
 
-        if (averageTime < smallestAverage) {
-            smallestAverage = averageTime;
+        if (totalTimes[i] < smallestAverage) {
+            smallestAverage = totalTimes[i];
             smallestCities.clear();
             smallestCities.push_back(i);
-        } else if (averageTime == smallestAverage) {
+        } else if (totalTimes[i] == smallestAverage) {
             smallestCities.push_back(i);
         }
     }
@@ -105,7 +104,7 @@ void calculateAverageTimes(const vector<vector<int>>& graph) {
     cout << endl;
 
     // Print the smallest average time
-    cout << "Smallest average time: " << smallestAverage << endl;
+    cout << "Smallest average time: " << smallestAverage/5 << endl;
 }
 
 
@@ -126,3 +125,4 @@ int main() {
 
     return 0;
 }
+
